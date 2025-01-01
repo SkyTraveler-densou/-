@@ -1,0 +1,179 @@
+\documentclass[dvipdfmx, a5j, landscape]{jarticle}
+
+\title{年賀状}
+
+\usepackage{tikz}
+\usepackage[top=0mm, bottom=0mm, left=-3.75mm, right=0mm]{geometry}
+
+\usetikzlibrary{intersections, calc, arrows.meta, patterns}
+
+\begin{document}
+	\begin{tikzpicture}[every path/.style={draw=red}]
+		\draw[thick, black] (0, 0) rectangle (10.5, 14.8);
+		
+		\begin{scope}	%表面
+			\begin{scope}	%切手の部分
+				\draw[thick] (0.7, 11.8) rectangle (3.0, 14);
+				\node[red] at (1.8, 12.9) {電送です};
+				\node[red] at (1, 11.5) {Sky};
+				\node[red] at (2.4, 11.55) {Traveler};
+			\end{scope}
+			
+			\begin{scope}	%年賀の部分
+				\node at (1.845, 10) {\includegraphics[scale=0.38]{C:/git_euso/yokutan.png}};
+				\node[red] at (1.845, 10.5) {年};
+				\node[red] at (1.845, 9.5) {賀};
+			\end{scope}
+			
+			\begin{scope}	%差出人の部分
+				\node[above, font=\large] at (2.5, 8.5) {静};
+				\node[above, font=\large] at (2.5, 7.5) {岡};
+				\node[above, font=\large] at (2.5, 6.5) {県};
+				\node[above, font=\large] at (2.5, 5.5) {袋};
+				\node[above, font=\large] at (2.5, 4.5) {井};
+				\node[above, font=\large] at (2.5, 3.5) {市};		
+				\node[above, font=\large] at (2, 8.0) {豊};
+				\node[above, font=\large] at (2, 7.3) {沢};
+				\node[above, font=\large] at (2, 6.6) {二};
+				\node[above, font=\large] at (2, 5.9) {二};
+				\node[above, font=\large] at (2, 5.2) {〇};
+				\node[above, font=\large] at (2, 4.5) {〇};
+				\node[above, font=\large, rotate=90] at (2.2, 4.2) {-};
+				\node[above, font=\large] at (2, 3.1) {二};
+				\node[above, font=\huge, rotate=-90] at (0.75, 6) {Sky\_Traveler};
+				%\node[above, font=\Large] at (1.2, 3.5) {一};
+				%\node[above, font=\Large] at (1.2, 2.9) {同};
+			\end{scope}
+			
+			\begin{scope}	%宛先の郵便番号
+				\node[red] at (5.5, 13.9) {郵 便 は が き};
+				\draw[thick] (4.3, 13.65) rectangle (4.9, 12.75);
+				\node[black, font=\LARGE] at (4.6, 13.2) {1};
+				\draw[thick] (5, 13.65) rectangle (5.6, 12.75);
+				\node[black, font=\LARGE] at (5.3, 13.2) {2};
+				\draw[thick] (5.7, 13.65) rectangle (6.3, 12.75);
+				\node[black, font=\LARGE] at (6, 13.2) {3};
+				\draw[thick] (6.3, 13.2) -- (6.5, 13.2);
+				\draw (6.5, 13.65) rectangle (7, 12.75);
+				\node[black, font=\LARGE] at (6.75, 13.2) {4};
+				\draw (7.1, 13.65) rectangle (7.6, 12.75);
+				\node[black, font=\LARGE] at (7.35, 13.2) {5};
+				\draw (7.7, 13.65) rectangle (8.2, 12.75);
+				\node[black, font=\LARGE] at (7.95, 13.2) {6};
+				\draw (8.3, 13.65) rectangle (8.8, 12.75);
+				\node[black, font=\LARGE] at (8.55, 13.2) {7};
+				
+				\node[above, font=\large] at (8.4, 11.3) {万};
+				\node[above, font=\large] at (8.4, 10.8) {国};
+				
+				\node[above, font=\Huge] at (5.1, 9.8) {皆};
+				\node[above, font=\Huge] at (5.1, 5.8) {々};
+				\node[above, font=\Huge] at (5.1, 1.8) {様};
+			\end{scope}
+			
+			\begin{scope}	%差出人の郵便番号
+				\draw[dashed] (0.6, 1.85) rectangle (1, 2.5);
+				\draw[dashed] (1, 1.85) rectangle (1.4, 2.5);
+				\draw[dashed] (1.4, 1.85) rectangle (1.8, 2.5);
+				\draw[dashed] (1.9, 1.85) rectangle (2.3, 2.5);
+				\draw[dashed] (2.3, 1.85) rectangle (2.7, 2.5);
+				\draw[dashed] (2.7, 1.85) rectangle (3.1, 2.5);
+				\draw[dashed] (3.1, 1.85) rectangle (3.5, 2.5);
+				\node[above] at (0.8, 1.95) {4};
+				\node[above] at (1.2, 1.95) {3};
+				\node[above] at (1.6, 1.95) {7};
+				\node[above] at (2.1, 1.95) {8};
+				\node[above] at (2.5, 1.95) {5};
+				\node[above] at (2.9, 1.95) {5};
+				\node[above] at (3.3, 1.95) {5};
+			\end{scope}
+			
+			\begin{scope}	%任意の番号のところ
+				\draw[dashed, pattern=grid] (0.6, 0.45) rectangle (3.6, 1.45);
+				\fill[red] (3.8, 0.45) rectangle (6.25, 1.45);
+				\draw[dashed, pattern=grid] (6.5, 0.45) rectangle (9.5, 1.45);
+				\node[above, font=\LARGE, red] at (2.1, 0.55) {R07 年};
+				\node[above, font=\LARGE, red] at (8, 0.65) {127.12m};
+			\end{scope}
+		\end{scope}
+		
+		\draw[thick, black] (10.5, 0) rectangle (21, 14.8);
+		\begin{scope}	%裏面
+			\begin{scope}	%謹賀新年部分
+				\draw[thick] (18, 9.25) rectangle (20, 14);
+				\node[above, font=\Huge, red] at (19, 12.5) {謹};
+				\node[above, font=\Huge, red] at (19, 11.5) {賀};
+				\node[above, font=\Huge, red] at (19, 10.5) {新};
+				\node[above, font=\Huge, red] at (19, 9.5) {年}; 
+			\end{scope}
+			
+			\begin{scope}	%富士山と朝日
+				\coordinate (A) at (13.25, 6.4);
+				\coordinate (B) at (14.25, 6.4);
+				\coordinate (C) at (12, 4.939473682);
+				\coordinate (D) at (17.5, 2.6);
+				\coordinate (E) at (18, 2.7);
+				\coordinate (F) at (10.5, 3.1868421);
+				\coordinate (G) at (10.5, 0);
+				\coordinate (H) at (20.22522523, 0);
+				\coordinate (I) at (18.39641, 2.218523);
+				\fill[black] (C)--(F)--(G)--(H)--(I)--(D)--cycle;
+				\fill[red] (A)--(B)--(D)--(C)--cycle;
+				\fill[red] (D)--(E)--(I)--cycle;
+				
+				\fill [red] (16.25, 9.87) circle [radius=1.5];
+			\end{scope}
+			
+			\begin{scope}	%飛行機
+				\draw[thick, black] (16.0619, 6.7367) to (15.3482, 7.8824);
+				\draw[thick, black] (15.3482, 7.8824) to (14.8955, 8.4248);
+				\draw[thick, black] (14.8955, 8.4248) to (14.6105, 8.6759);
+				\draw[thick, black] (14.6105, 8.6759) to (14.485, 8.7879);
+				\draw[thick, black] (14.485, 8.7879) to (14.1739, 8.391);
+				\draw[thick, black] (14.1739, 8.391) to (14.6105, 8.6759);
+				\draw[thick, black] (14.1739, 8.391) to (14.3996, 8.1263);
+				\draw[thick, black] (14.3996, 8.1263) to (14.8955, 8.4248);
+				\draw[thick, black] (14.3996, 8.1263) to (14.7458, 7.5737);
+				\draw[thick, black] (14.7458, 7.5737) to (15.3482, 7.8824);
+				\draw[thick, black] (14.7458, 7.5737) to (15.2595, 6.4491);
+				\draw[thick, black] (16.0619, 6.7367) to (15.2595, 6.4491);
+				\draw[thick, black] (15.2595, 6.4491) to (13.4847, 5.813);
+				\draw[thick, black] (13.4847, 5.813) to (13.2244, 6.0201);
+				\draw[thick, black] (13.2244, 6.0201) to (13.039, 5.6532);
+				\draw[thick, black] (13.039, 5.6532) to (13.4847, 5.813);
+				\draw[thick, black] (13.039, 5.6532) to (13.288, 5.4133);
+				\draw[thick, black] (13.288, 5.4133) to (13.4847, 5.813);
+				\draw[thick, black] (16.0619, 6.7367) to (17.2669, 4.8024);
+				\draw[thick, black] (17.2669, 4.8024) to (18.5889, 2.2044);
+				\draw[thick, black] (18.5889, 2.2044) to (19.7645, -0.5801);
+				\draw[thick, black] (19.7645, -0.5801) to (20.6164, -2.5842);
+				\draw[thick, black] (20.6164, -2.5842) to (17.5723, 0.0364);
+				\draw[thick, black] (17.5723, 0.0364) to (19.7645, -0.5801);
+				\draw[thick, black] (17.5723, 0.0364) to (16.9137, 2.3423);
+				\draw[thick, black] (16.9137, 2.3423) to (18.5889, 2.2044);
+				\draw[thick, black] (16.9137, 2.3423) to (16.089, 4.6332);
+				\draw[thick, black] (16.089, 4.6332) to (17.2669, 4.8024);
+				\draw[thick, black] (16.089, 4.6332) to (15.2595, 6.4491);
+			\end{scope}
+			
+			\begin{scope}	%本年もよろしくお願い申し上げます。
+				\node[above, font=\large] at (13, 12.0) {本};
+				\node[above, font=\large] at (13, 11.3) {年};
+				\node[above, font=\large] at (13, 10.6) {も};
+				\node[above, font=\large] at (11.75, 11.0) {よ};
+				\node[above, font=\large] at (11.75, 10.3) {ろ};
+				\node[above, font=\large] at (11.75, 9.6) {し};
+				\node[above, font=\large] at (11.75, 8.9) {く};
+				\node[above, font=\large] at (11.75, 8.2) {お};
+				\node[above, font=\large] at (11.75, 7.5) {願};
+				\node[above, font=\large] at (11.75, 6.8) {い};
+				\node[above, font=\large] at (11.75, 6.1) {申};
+				\node[above, font=\large] at (11.75, 5.4) {し};
+				\node[above, font=\large] at (11.75, 4.7) {上};
+				\node[above, font=\large, white] at (11.75, 4.0) {げ};
+				\node[above, font=\large, white] at (11.75, 3.3) {ま};
+				\node[above, font=\large, white] at (11.75, 2.6) {す};
+			\end{scope}
+		\end{scope}
+	\end{tikzpicture}
+\end{document}
